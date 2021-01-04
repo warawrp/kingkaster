@@ -48,15 +48,37 @@
 
 @media screen and (min-width: 1200px){
 
+
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+    .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{
+        padding:0 !important;
+    }
+
+    #navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .bg_navbar{
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+        background-color: #141621;
+        height: 80px;
+    }
+
     .logo1{
-        width: 72px;
+        height: 49px;
     }
     .logo2{
-        width: 137px;
+        height: 18px;
     }
-    .bg-navbar{
+    .cover-top{
         height: 80px;
-        width: 100vw;
+        width: 100%;
         z-index: 1;
         position: absolute;
         top: 0;
@@ -64,8 +86,8 @@
         background-image: linear-gradient(to bottom, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
     }
     .cover-left{
-        height: 100vh;
-        width: 80px;
+        height: 623px;
+        width: 100px;
         position: absolute;
         top: 0;
         left: 0;
@@ -74,7 +96,7 @@
     }
 
     .cover-right{
-        height: 100vh;
+        height: 623px;
         width: 80px;
         position: absolute;
         top: 0;
@@ -82,4 +104,120 @@
         z-index: 0;
         background-image: linear-gradient(to left, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
     }
+    .cover-bottom{
+        height: 80px;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+        top: 543px;
+        left: 0;
+        background-image: linear-gradient(to top, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+    }
+
+    .inputSearch{
+        font-family: 'kanitlight';
+        color:#fff;
+        width: 401px;
+        height: 43px;
+        margin-top: -5px;
+        padding: 0 0 0 45px;
+        background-color: rgba(255, 255, 255, 0.342);
+        border-radius: 7px;
+        border: solid 1px #ffffff;
+    }
+
+    .inputSearch:focus{
+        outline: none;
+    }
+
+    .btn-search{
+        font-family: 'kanitregular';
+        color: #fff;
+        width: 89px;
+        height: 43px;
+        position: relative;
+        top:-43px;
+        left:313px;
+        border-radius: 7px;
+        border: solid 1px #ffffff;
+        background-color: #399cff;
+    }
+
+    .btn-search:focus{
+        outline: none;
+    }
+
+    .iconSearch{
+        position: relative;
+        width: 17.9px;
+        height: 18.4px;
+        top: 25px;
+        left: 15px;
+    }
+    .iconCart{
+        width: 52px;
+        height: 54px;
+        margin: 12px 0 0 10px;
+    }
+
+    .numberNoti{
+        font-family: 'kanitregular';
+        font-size: 12px;
+        color: #fff;
+        background-color:#d50915;
+        border-radius: 25px;
+        border: none;
+        line-height: 1;
+        padding-bottom: 2px;
+        position: relative;
+        z-index: 12;
+        top: -55px;
+        left: 45px;
+    }
+
+    .numberNoti:focus{
+        outline: none;
+    }
+
+    .iconNoti{
+        width: 52px;
+        height: 54px;
+        margin: 12px 0 0 0;
+    }
+    .numberNoti2{
+        font-family: 'kanitregular';
+        font-size: 12px;
+        color: #fff;
+        background-color:#d50915;
+        border-radius: 25px;
+        border: none;
+        line-height: 1;
+        padding-bottom: 2px;
+        position: relative;
+        z-index: 12;
+        top: -55px;
+        left: 40px;
+    }
+
+    .numberNoti2:focus{
+        outline: none;
+    }
+
+    .login{
+        font-family: 'kanitregular';
+        font-size: 12px;
+        color: #fff;
+        background-color:#399cff;
+        border-radius: 7px 7px 7px 0;
+        border: none;
+        position: relative;
+        z-index: 15;
+        top: -10px;
+        left: -15px;
+    }
+
+    .login{
+        outline: none;
+    }
+
 }
