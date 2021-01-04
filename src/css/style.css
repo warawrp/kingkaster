@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'kanitlight';
+    src: url('kanit-light-webfont.woff2') format('woff2'),
+         url('kanit-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kanitmedium';
+    src: url('kanit-medium-webfont.woff2') format('woff2'),
+         url('kanit-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kanitsemibold';
+    src: url('kanit-semibold-webfont.woff2') format('woff2'),
+         url('kanit-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kanitregular';
+    src: url('kanit-regular-webfont.woff2') format('woff2'),
+         url('kanit-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.div1{
+    font-family: 'kanitsemibold';
+}
+
+.background{
+    /* background-color: #141621; */
+    font-size: 40px;
+}
+
+@media screen and (max-width: 320px){
+
+    .logo1{
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .logo1{
+        width: 72px;
+    }
+    .logo2{
+        width: 137px;
+    }
+    .bg-navbar{
+        height: 80px;
+        width: 100vw;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+    }
+    .cover-left{
+        height: 100vh;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-image: linear-gradient(to right, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+    }
+
+    .cover-right{
+        height: 100vh;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        background-image: linear-gradient(to left, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+    }
+}
