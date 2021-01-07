@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app container-fluid">
     <div id="nav">
       <!-- <router-link to="/">Home</router-link> -->
     </div>
@@ -7,6 +7,7 @@
     <router-view />
   </div>
 </template>
+
 
 <style>
   @import './css/style.css';

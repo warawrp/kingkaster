@@ -12,20 +12,18 @@
                     <input type="radio" id="image4" name="image">
                     <input type="radio" id="image5" name="image">
 
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="padding:0;">
                         <div class="featured-wrapper">
                             <ul class="featured-list">
                                 <li>
                                     <figure>
-                                        <video playsinline autoplay muted loop>
-                                            <source src="../assets/video/anime1.mp4" type="video/mp4">
-                                        </video>
+                                        <img class="imgSlide" src="../assets/image/imgSlide/startup.png" >
                                     </figure>
                                 </li>
                                 <li>
                                     <figure>
                                         <video playsinline autoplay muted loop>
-                                            <source src="../assets/video/octagon.mp4" type="video/mp4">
+                                            <source src="../assets/video/anime1.mp4" type="video/mp4">
                                         </video>
                                     </figure>
                                 </li>
@@ -123,48 +121,49 @@
 
 <script>
     export default {
-        name: "ImageSlide",
+        name: "ImageSlideHeader",
     }
 </script>
 
 <style lang="css">
 @media screen and (min-width: 1200px){
     .cover-top{
-        height: 80px;
+        height: 255px;
         width: 100%;
-        z-index: 1;
+        z-index: 0;
         position: absolute;
         top: 0;
         left: 0;
-        background-image: linear-gradient(to bottom, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+        background-image: linear-gradient(to bottom, #141621, rgba(20, 22, 33, 0.28) 32%, rgba(20, 22, 33, 0) 79%);
+
     }
     .cover-left{
         height: 623px;
-        width: 100px;
+        width: 240px;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 0;
-        background-image: linear-gradient(to right, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+        background-image: linear-gradient(to right, #141621, rgba(20, 22, 33, 0.28) 37%, rgba(20, 22, 33, 0) 89%);
     }
 
     .cover-right{
         height: 623px;
-        width: 80px;
+        width: 240px;
         position: absolute;
         top: 0;
         right: 0;
         z-index: 0;
-        background-image: linear-gradient(to left, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+        background-image: linear-gradient(to left,  #141621, rgba(20, 22, 33, 0.28) 37%, rgba(20, 22, 33, 0) 89%);
     }
     .cover-bottom{
-        height: 80px;
+        height: 248px;
         width: 100%;
         z-index: 0;
         position: absolute;
-        top: 543px;
+        top:375px;
         left: 0;
-        background-image: linear-gradient(to top, #141621,rgba(20, 22, 33, 1) 25%, rgba(20, 22, 33, 0.75) 50%, rgba(20, 22, 33, 0) 100%);
+        background-image: linear-gradient(to top,  #141621, rgba(20, 22, 33, 0.28) 37%, rgba(20, 22, 33, 0) 89%);
     }
     video {
     object-fit: cover;
@@ -239,7 +238,7 @@
 
     .thumb-list {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 90px;
     right: 325px;
     }
@@ -254,7 +253,6 @@
         width: 320px;
         height: 97px;
         color: #fff;
-        
     }
 
     .thumb-list img {
@@ -282,6 +280,12 @@
         width: 100%;
         height: 623px;
         margin: 0;
+    }
+
+    .imgSlide{
+        width: 100%;
+        height: 623px;
+        object-fit: cover;
     }
 
     /* MIMIC CLICK EVENT
@@ -315,7 +319,7 @@
 
     .titleImage {
         position: absolute;
-        z-index: 1;
+        /* z-index: 0; */
         top: 0;
         right: 0;
         width: 320px;
