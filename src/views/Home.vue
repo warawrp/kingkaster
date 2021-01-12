@@ -2,6 +2,7 @@
   <div id="home" class="container-fluid" style="padding:0;">
       <Navbar />
       <ImageSlideHeader />
+      <Sidebar />
       
       <div class="row">
         <div class="col-lg-12">
@@ -14,12 +15,14 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import ImageSlideHeader from "@/components/ImageSlideHeader.vue";
+import Sidebar from "@/components/Sidebar.vue"
 
 export default {
   name: "Home",
   components: {
     Navbar,
-    ImageSlideHeader
+    ImageSlideHeader,
+    Sidebar
   }
 };
 </script>

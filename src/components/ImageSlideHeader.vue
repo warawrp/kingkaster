@@ -126,6 +126,7 @@
 </script>
 
 <style lang="css">
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 @media screen and (min-width: 1200px){
     .cover-top{
         height: 255px;

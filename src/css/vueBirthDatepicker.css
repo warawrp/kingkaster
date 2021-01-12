@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'kanitregular';
+    src: url('kanit-regular-webfont.woff2') format('woff2'),
+         url('kanit-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.birthday-picker_carriage-up{
+    display:inline-block;
+    width:0;
+    height:0;
+    border:.75em solid rgba(0,0,0,.1);
+    border-top:none;
+    border-right-color:transparent;
+    border-left-color:transparent}
+
+.birthday-picker_carriage-down{
+    display:inline-block;
+    width:0;
+    height:0;
+    border:.75em solid rgba(0,0,0,.1);
+    border-bottom:none;
+    border-right-color:transparent;
+    border-left-color:transparent}
+
+.birthday-picker .bdp-decrease-year,.birthday-picker .bdp-increase-year{
+    text-align:center;
+    cursor:pointer;
+    -webkit-transition:background-color .2s;
+    transition:background-color .2s}
+    
+.birthday-picker .bdp-decrease-year:hover,.birthday-picker .bdp-increase-year:hover{
+    background-color:rgba(0,0,0,.1);
+    color:#000;
+}
+
+[class^=birthday-picker]{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box}
+
+.birthday-picker{
+    font-family: 'kanitregular';
+    font-size: 13px;
+    width: 100% !important;
+    height: 46px;
+    /* font-family:Roboto,Helvetica,Arial,sans-serif; */
+    position:relative;
+    display:inline-block;
+    min-width:8em;
+    min-height:2.5em;
+    border:none;
+    border-radius:3px;
+    padding:0;
+    vertical-align:middle;
+    margin-bottom: 5px;
+}
+.birthday-picker.disabled{
+    pointer-events:none}
+.birthday-picker.disabled .birthday-picker_dropdown{
+    background-color:#141621}
+.birthday-picker .disabled{
+    opacity:.3;pointer-events:none}
+.birthday-picker table{
+    width:100%}
+.birthday-picker td{
+    text-align:center}
+.birthday-picker td a{
+    display:block;
+    padding:5px;
+    border-radius:20px;
+    cursor:pointer;
+    border:1px solid transparent;
+    -webkit-transition:background-color .2s;
+    transition:background-color .2s;
+    color:inherit;
+    text-decoration:none}
+    
+.birthday-picker td a:hover{
+    background-color:rgba(0,0,0,.1)}
+
+.birthday-picker td a.bdp-today{
+    border-color:rgba(0,0,0,.1)}
+
+.birthday-picker td a.bdp-active{
+    /* active วันที่เลือก */
+    background-color:#e3e3e3;
+    color:#5a5f83;
+}
+
+.birthday-picker td a.bdp-active:hover{
+    background-color:#141621}
+.birthday-picker input{
+    font-size: 13px;
+    position:absolute;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:100% ;
+    height:46px;
+    border:none;
+    border-radius:7px;
+    border: solid 1px #989898;
+    background-color: #e3e3e3;
+    color: #5a5f83;
+    padding: 0 0 0 10px;
+}
+
+.birthday-picker input:focus{
+    border: solid 1px #989898;
+    outline: none;
+}
+
+.birthday-picker_days-months,.birthday-picker_dropdown-body{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:row;
+    flex-direction:row}
+.birthday-picker_days,.birthday-picker_months,.birthday-picker_years{
+    padding:0 2px;
+    /* พื้นหลัง วันเดือนปี */
+    background-color:#ffffff;
+    color:#5a5f83;}
+.birthday-picker_days{
+    -webkit-box-flex:2;
+    -ms-flex-positive:2;
+    flex-grow:2
+    }
+.birthday-picker_months{
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    border-right:1px solid #707070;
+    border-left:1px solid #707070}
+.birthday-picker_dropdown{
+    display:block;
+    padding:0;
+    text-align:left;
+    font-size:13px;
+    position:absolute;
+    background-color:#707070;
+    border:1px solid rgba(0,0,0,.1);
+    border-radius:0 0 3px 3px;
+    -webkit-box-shadow:2px 2px 10px rgba(0,0,0,.1);
+    box-shadow:2px 2px 10px rgba(0,0,0,.1);
+    z-index:1001}
+.birthday-picker_dropdown.attach-top{
+    bottom:100%}
+.birthday-picker_dropdown.attach-bottom{
+    top:100%}
+.birthday-picker_dropdown.attach-left{
+    left:0}
+.birthday-picker_dropdown.attach-right{
+    right:0}
+.birthday-picker_dropdown-header{
+    background-color:#e3e3e3;
+    color:#5a5f83;
+    padding:10px;
+    text-align:right;
+    font-size:13px;
+    font-weight:300;
+    font-family: 'kanitregular';
+    /* font-family:Roboto,Helvetica,Arial,sans-serif}
+.birthday-picker_high .birthday-picker_dropdown-body{ */
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column}
+.birthday-picker_high .birthday-picker_months{
+    border-right:none}
+.birthday-picker_high 
+.birthday-picker_years{
+    border-top:1px solid rgba(0,0,0,.1)}
+/* ลูกศร dropdrow */
+.birthday-picker_carriage{
+    position:absolute;
+    top:5px;
+    right:10px;
+    width:10px;
+    height:calc(100% - 10px);
+    pointer-events:none;
+    text-align:left;
+    -webkit-transition:-webkit-transform .3s;
+    transition:-webkit-transform .3s;
+    transition:transform .3s;
+    transition:transform .3s,-webkit-transform .3s}
+/* ลูกศร dropdrow */
+.birthday-picker_carriage:after{
+    content:"";
+    position:absolute;
+    top:calc(50% - 2px);
+    width:0;
+    height:0;
+    border:5px solid transparent;
+    border-top-color:#5a5f83}
+.birthday-picker_carriage.bp-opened{
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg)}
+.birthday-picker_inline .birthday-picker_carriage,.birthday-picker_inline input{
+    display:none}
+.birthday-picker_inline .birthday-picker_dropdown{
+    position:relative;
+    z-index:inherit;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border:none}
+.dropdown-trans-enter,.dropdown-trans-leave-to{
+    opacity:0;
+    -webkit-transform:translateY(-10px);
+    transform:translateY(-10px)}
+.dropdown-trans-enter-to,.dropdown-trans-leave{
+    opacity:1;
+    -webkit-transform:translateY(0);
+    transform:translateY(0)}
+.dropdown-trans-enter-active,.dropdown-trans-leave-active{
+    -webkit-transition:opacity .1s ease-out,-webkit-transform .1s ease-out;
+    transition:opacity .1s ease-out,-webkit-transform .1s ease-out;
+    transition:opacity .1s ease-out,transform .1s ease-out;
+    transition:opacity .1s ease-out,transform .1s ease-out,-webkit-transform .1s ease-out}

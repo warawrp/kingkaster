@@ -36,7 +36,7 @@
         <!-- Modal -->
         <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-                <div class="modal-content" style="background-color: #202433;color:#fff;">
+                <div class="modal-content">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 text-center">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="row ml-1">
+                                <div class="row ml-1" style="height:80px">
                                     <ul class="nav topnav">
                                         <li class="nav-item mr-4 ">
                                             <a class="nav-link active" data-toggle="tab" href="#tap1">
@@ -58,39 +58,40 @@
                                                 <div>สมัครสมาชิก</div>
                                             </a>
                                         </li>
+                                        <div class="line"></div>
                                     </ul>
                                 </div>
 
                                 <div class="tab-content">
                                     <div id="tap1" class="container tab-pane active" style="padding:0;">
                                         <div class="form-group">
-                                            <label class="titleInput">อีเมล</label>
-                                            <input type="email" class="inputField form-control" v-model="email" name="email" required>
+                                            <label class="titleInput">อีเมลหรือเบอร์โทรศัพท์</label>
+                                            <input type="email" class="inputField form-control" v-model="email" name="email" placeholder="อีเมลหรือเบอร์โทรศัพท์" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="titleInput">รหัสผ่าน</label>
-                                            <input type="password" class="inputField form-control" v-model="password" name="password" required>
+                                            <input type="password" class="inputField form-control" v-model="password" placeholder="รหัสผ่าน" name="password" required>
                                         </div>
                                         <div class="text-right">
                                             <a href="#"><p class="forgotPassword">ลืมรหัสผ่าน ?</p></a>
                                         </div>
                                         <div align="center">
                                             <div  v-if=' !checkEmail && !checkPasswordLogin'>   
-                                                <button type="submit" class="btnlogin">เข้าสู่ระบบ</button>
+                                                <button type="submit" class="btnlogin mt-3">เข้าสู่ระบบ</button>
                                             </div>
 
                                             <div  v-else>   
-                                                <button type="submit" class="btnlogin active">เข้าสู่ระบบ</button>
-                                            </div>
-
-                                            <div class="fontOr" style="margin:0;">
-                                                หรือ
+                                                <button type="submit" class="btnlogin btnloginDis mt-3" disabled>เข้าสู่ระบบ</button>
                                             </div>
 
                                             <div class="mb-4">
                                                 <button class="btnFacebook">
                                                     <img class="imgFacebook" src="../assets/icon/facebook.png">
-                                                    <a>เข้าสู่ระบบด้วย เฟสบุ๊ค</a>
+                                                    <a>Log In with Facebook</a>
+                                                </button>
+                                                <button class="btnGoogle">
+                                                    <img class="imgFacebook" src="../assets/icon/google.png">
+                                                    <a>Log In with Google</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -98,12 +99,12 @@
                                     
                                     <div id="tap2" class="container tab-pane" style="padding:0;">
                                         <div class="form-group">
-                                            <label class="titleInput">อีเมล</label>
-                                            <input type="email" class="inputField form-control" v-model="email" name="email" required>
+                                            <label class="titleInput">อีเมลหรือเบอร์โทรศัพท์</label>
+                                            <input type="email" class="inputField form-control" v-model="email" name="email" placeholder="อีเมลหรือเบอร์โทรศัพท์" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="titleInput">รหัสผ่าน</label>
-                                            <input type="password" class="inputField form-control" v-model="password" name="password" required>
+                                            <input type="password" class="inputField form-control" v-model="password" name="password" placeholder="รหัสผ่าน" required>
                                         </div>
                                         
                                         <div class="form-group">
@@ -111,7 +112,12 @@
                                             <label class="error" v-if='notSamePasswords'>
                                                 รหัสผ่านไม่ตรงกัน
                                             </label>
-                                            <input type="password" class="inputField form-control" v-model.lazy='checkPassword' required>
+                                            <input type="password" class="inputField form-control" v-model.lazy='checkPassword' placeholder="ยืนยันรหัสผ่าน" required>
+                                        </div>
+
+                                        <div>
+                                            <label class="titleInput mr-2">วัน/เดือน/ปี เกิด</label><br>
+                                            <BirthDatepicker />
                                         </div>
 
                                          <transition name="hint" appear>
@@ -121,16 +127,19 @@
                                             </div>
                                         </transition>
 
-                                        <input type="checkbox" id="agreememt" value="accept" v-model="agreements" class="mr-2">
-                                        <label class="accept" for="agreememt">ยอมรับ</label>
-                                        <label class="acceptDes" for="agreememt">By clicking sign up, you are indicating that you have read and acknowledge the Terms of Service and Privacy Notice.</label><br>
+                                        <input type="checkbox" id="agreememt" value="accept" v-model="agreements" class="mr-2 mt-2">
+                                        <label class="accept" for="agreememt">ยอมรับ By clicking sign up, you are indicating that you have read and acknowledge the Terms of Service and Privacy Notice.</label>
+                                        <label class="acceptDes" for="agreememt"></label><br>
                                         <!-- <span>ตรวจสอบการยอมรับเงื่อนไข: {{ agreements }}</span><br> -->
 
-                                        <button class="btnlogin mb-4" @keyup='resetPasswords' v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid && !acceptAgreementFilled && !checkEmailFilled && !checkNameFilled' >
-                                            สมัครสมาชิก
-                                        </button>
-                                        <button v-else class="btnlogin active mb-4" disabled>สมัครสมาชิก</button>
-                                        
+                                        <div @keyup='resetPasswords' v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid && !acceptAgreementFilled && !checkEmailFilled && !checkNameFilled'>
+                                            <button class="btnlogin mt-2 mb-4" >
+                                                สมัครสมาชิก
+                                            </button>
+                                        </div>
+                                        <div v-else>
+                                            <button class="btnlogin btnloginDis mt-2 mb-4" disabled>สมัครสมาชิก</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -146,6 +155,7 @@
 import Vue from 'vue'
 import vuescroll from 'vue-scroll'
 import VuePageTransition from 'vue-page-transition'
+import BirthDatepicker from 'vue-birth-datepicker';
  
 Vue.use(VuePageTransition)
 Vue.use(vuescroll)
@@ -222,14 +232,17 @@ Vue.use(vuescroll)
             checkEmailFilled(){
                 return(this.email == '')
             }
+        },
+        components:{
+            BirthDatepicker
         }
     }
 </script>
 
 <style scoped>
  
- 
  @media screen and (min-width: 1200px){
+     
      #navbar{
         position: fixed;
         width: 100%;
@@ -243,6 +256,8 @@ Vue.use(vuescroll)
         transition: background-color 1s ease-out;
         background-color: #141621;
         height: 80px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.42);
+
     }
 
     .logo1{
@@ -375,39 +390,73 @@ Vue.use(vuescroll)
         margin-top: 32px;
         font-family: 'kanitmedium';
         font-size: 13px;
-        color: #cca343;
-        border-bottom: solid 3px #202433;
-        padding: 10px 2px;
+        color: #989898;
+        border-bottom: solid 4px #fff;
+        padding:15px 0 ;
+        line-height: 0;
     }
 
     .topnav a.active{
-        border-bottom: solid 3px #ffffff;
+        border-bottom: solid 3px #2d3359;
+        color:#2d3359;
+        z-index: 1;
+    }
+
+    /* .topnav a::after {
+        margin-top: 18px;
+        content: '';
+        display: block;
+        width: 0;
+        height: 4px;
+        background: #2d3359;
+        transition: width .3s;
+        z-index: 0;
+    }
+
+    .topnav a:hover::after {
+        width: 100%;
+    } */
+
+    .line{
+        width:94%;
+        height: 1px;
+        opacity: 0.3;
+        background-color: #707070;
+        position: absolute;
+        top: 63px;
+        left: 18px;
+        z-index: 0;
     }
 
     .titleInput{
         margin-left: 5px;
         font-family: 'kanitmedium';
         font-size: 13px;
-        color: #ffffff;
+        color: #989898;
     }
 
     .inputField {
         width: 100%;
-        height: 35px;
-        margin: 0 15.6px 0 3.5px;
+        height: 46px;
+        margin: 0 15.6px 0 0;
         object-fit: contain;
-        border-radius: 8px;
-        border: solid 2px #0c0d14;
-        background-color: #0c0d14;
+        border-radius: 6px;
+        border: solid 1px #989898;
+        background-color: #e3e3e3;
         font-family: 'kanitmedium';
-        color: #ffffff;
+        color: #5a5f83;
         font-size: 13px;
     }
 
+    .inputField::placeholder{
+     color:#5a5f83;
+    } 
     .inputField:focus {
-        border: solid 2px #ffffff;
-        background-color: #0c0d14;
-        color: #ffffff;
+        border: solid 1px #989898;
+        background-color: #e3e3e3;
+        color: #5a5f83;
+        /* outline: none; */
+        box-shadow: none;
     }
 
     .forgotPassword{
@@ -419,36 +468,41 @@ Vue.use(vuescroll)
     }
 
     .btnlogin{
-        width: 100%;
-        height: 35px;
-        border-radius: 8px;
-        background-color: #ffffff;
         font-family: 'kanitmedium';
         font-size: 13px;
-        line-height: 1;
-        font-weight: 500;
-        border: none;
-        margin-top: 20px;
+        color: #fff;
+        height: 46px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px 0 rgba(26, 64, 149, 0.25);
+        border: solid 2px #4e7bf7;
+        background-color: #4e7bf7;
     }
 
-    .btnlogin.active{
-        color: #615f5f;
+    .btnloginDis{
+        opacity: 0.5;
     }
     
-    .fontOr{
-        color: #ffffff;
-        font-size: 12px;
-        font-family: 'kanitlight';
-        margin: 9px;
-        line-height: 3;
-    }
 
     .btnFacebook{
         width: 100%;
-        height: 35px;
-        border-radius: 8px;
-        background-color: #2196f3;
-        border: none;
+        height: 46px;
+        margin: 13px 5.5px 13px 0;
+        padding: 8px 77.7px 14.3px 61.4px;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px 0 rgba(26, 64, 149, 0.25);
+        border: solid 1px #4e7bf7;
+        background-color: #ffffff;
+    }
+
+    .btnFacebook a{
+        color: #4076ff;
+        font-family: 'kanitregular';
+        margin-left: 10px;
+        font-size: 13px;
+        line-height:0;
+        font-weight: 500;
+        text-decoration: none;
     }
 
     .imgFacebook{
@@ -456,13 +510,29 @@ Vue.use(vuescroll)
         margin-right: 10px;
     }
 
-    .btnFacebook a{
-        color: #ffffff;
-        font-family: 'kanitmedium';
+    .btnGoogle{
+        width: 100%;
+        height: 46px;
+        margin: 0 5.5px 13px 0;
+        padding: 8px 77.7px 14.3px 61.4px;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px 0 rgba(173, 22, 22, 0.25);
+        border: solid 1px#f24250;
+        background-color: #ffffff;
+    }
+
+    .btnGoogle a{
+        color: #f5404b;
+        font-family: 'kanitregular';
+        margin-left: 10px;
         font-size: 13px;
         line-height:0;
         font-weight: 500;
+        text-decoration: none;
     }
+
+
+
     .error{
         font-family: 'kanitmedium';
         font-size: 13px;
@@ -472,11 +542,11 @@ Vue.use(vuescroll)
     .titlePassword{
         font-family: 'kanitmedium';
         font-size: 13px;
-        color: #ffffff;
+        color:#989898;
     }
 
     .hints {
-    color: #ffffff;
+    color: #989898;
     font-size: 12px;
     font-family: 'kanitlight';
     margin-left: 5px;
@@ -492,19 +562,19 @@ Vue.use(vuescroll)
     
     .accept{
         vertical-align: text-top;
-        padding-top: 10px;
+        padding-top: 3px;
         font-family: 'kanitmedium';
         font-size: 12px;
-        line-height: 0;
-        color: #ffffff;
+        line-height: 1.2;
+        color: #989898;
+        width: 90%;
     }
 
     .acceptDes{
         font-family: 'kanitlight';
         font-size: 12px;
-        color: #ffffff;
+        color: #989898;
         margin: 0;
     }
-    
 }
 </style>
