@@ -14,59 +14,31 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row " v-for="follow in follows" :key="follow.id">
                 <div class="col-lg-12">
                     <a href="#">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
+                        <div v-if="follow.live == 1">
+                            <div class="sb-img active">
+                                <img :src="follow.image">
+                            </div>
+                            <div class="sb-ststusLive">Live</div>
                         </div>
-                        <div class="sb-cutName h4">BabyIce Zazunggggggggggg</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline"></label>
-                        <div class="sb-timeOnline">ออฟไลน์</div>
+
+                        <div v-else>
+                            <div class="sb-img">
+                                <img :src="follow.image">
+                            </div>
+                        </div>
+                        
+                        <div class="sb-cutName h4">{{follow.name}}</div>
+                        <div class="sb-newVideo h6">{{follow.video}} วีดีโอใหม่</div>
+                        <label class="sb-ststusOnline" v-if="follow.status != 1"></label>
+                        <label class="sb-ststusOnline active" v-else></label>
+                        <div class="sb-timeOnline">{{follow.timeOnline}}</div>
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
-                        </div>
-                        <div class="sb-cutName h4">BabyIce Zazung</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline active"></label>
-                        <div class="sb-timeOnline">24 นาทีออนไลน์</div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img active">
-                            <img src="../assets/image/profile/p01.jpg">
-                        </div>
-                        <div class="sb-cutName h4">BabyIce Zazung</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline active"></label>
-                        <div class="sb-timeOnline">24 นาทีออนไลน์</div>
-                        <div class="sb-ststusLive">Live</div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
-                        </div>
-                        <div class="sb-cutName h4">BabyIce Zazunggggggggggg</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline active"></label>
-                        <div class="sb-timeOnline">24 นาทีออนไลน์</div>
-                    </a>
-                </div>
-            </div>
+            
 
             <div class="row">
                 <div class="col-lg-12">
@@ -76,45 +48,31 @@
                     <label class="sb-fontHeader h4">ช่องที่แนะนำ</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row " v-for="recommend in recommends" :key="recommend.id">
                 <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
+                    <a href="#">
+                        <div v-if="recommend.live == 1">
+                            <div class="sb-img active">
+                                <img :src="recommend.image">
+                            </div>
+                            <div class="sb-ststusLive">Live</div>
                         </div>
-                        <div class="sb-cutName h4">BabyIce Zazunggggggggggg</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline"></label>
-                        <div class="sb-timeOnline">ออฟไลน์</div>
+
+                        <div v-else>
+                            <div class="sb-img">
+                                <img :src="recommend.image">
+                            </div>
+                        </div>
+                        
+                        <div class="sb-cutName h4">{{recommend.name}}</div>
+                        <div class="sb-newVideo h6">{{recommend.video}} วีดีโอใหม่</div>
+                        <label class="sb-ststusOnline" v-if="recommend.status != 1"></label>
+                        <label class="sb-ststusOnline active" v-else></label>
+                        <div class="sb-timeOnline">{{recommend.timeOnline}}</div>
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
-                        </div>
-                        <div class="sb-cutName h4">BabyIce Zazunggggggggggg</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline"></label>
-                        <div class="sb-timeOnline">ออฟไลน์</div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="">
-                        <div class="sb-img">
-                            <img src="../assets/image/profile/p01.jpg">
-                        </div>
-                        <div class="sb-cutName h4">BabyIce Zazunggggggggggg</div>
-                        <div class="sb-newVideo h6">11 วีดีโอใหม่</div>
-                        <label class="sb-ststusOnline"></label>
-                        <div class="sb-timeOnline">ออฟไลน์</div>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </template>
@@ -124,14 +82,80 @@
         name:'SideBar',
          data() {
             return {
-            open: false,
-            rotation: 0,
+                open: false,
+                follows:[
+                    {
+                        id: '1',
+                        image:'https://cdn.pixabay.com/photo/2021/01/04/12/44/cat-5887426__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '5',
+                        status: '1',
+                        timeOnline: '21 นาทีออนไลน์',
+                        live:'1'
+                    },
+                    {
+                        id: '2',
+                        image:'https://cdn.pixabay.com/photo/2020/12/25/09/46/dog-5858985__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '3',
+                        status: '0',
+                        timeOnline: 'ออฟไลน์',
+                        live:'0'
+                    },
+                    {
+                        id: '3',
+                        image:'https://cdn.pixabay.com/photo/2020/12/16/10/44/cat-5836297__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '9',
+                        status: '1',
+                        timeOnline: '10 นาทีออนไลน์',
+                        live:'0'
+                    },
+                    {
+                        id: '4',
+                        image:'https://cdn.pixabay.com/photo/2020/09/19/20/01/woman-5585332__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '5',
+                        status: '1',
+                        timeOnline: '30 นาทีออนไลน์',
+                        live:'0'
+                    }
+                ],
+                recommends:[
+                    {
+                        id: '1',
+                        image:'https://cdn.pixabay.com/photo/2019/05/21/07/11/cat-4218424__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '8',
+                        status: '0',
+                        timeOnline: 'ออฟไลน์',
+                        live:'0'
+                    },
+                    {
+                        id: '2',
+                        image:'https://cdn.pixabay.com/photo/2020/07/30/10/29/woman-5450043__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '112',
+                        status: '1',
+                        timeOnline: '8 นาทีออนไลน์',
+                        live:'1'
+                    },
+                    {
+                        id: '3',
+                        image:'https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684__340.jpg',
+                        name: 'BabyIce Zazunggggggggggg',
+                        video: '1199',
+                        status: '0',
+                        timeOnline: 'ออฟไลน์',
+                        live:'0'
+                    }
+                ]
             };
         },
         
         methods: {
             toggle() {
-            this.open = !this.open; 
+                this.open = !this.open; 
             },
         }
     }
@@ -147,16 +171,15 @@
 
     .slidein {
     width: 270px;
-    height: 523px;
     margin: 11px 0 0 130px;
-    padding: 15px 14px 21px 16px;
+    padding: 15px 14px 10px 16px;
     object-fit: contain;
     box-shadow: -10px 3px 10px 0 rgba(0, 0, 0, 0.16);
     background-color: #24284b;
     border-radius: 8px 0 0 8px;
     position: fixed; 
     z-index: 10;
-    top: 83px;
+    top: 75px;
     right: -200px;
     transition: all .3s ease-in-out;
     }

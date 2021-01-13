@@ -33,20 +33,18 @@
 
 @media screen and (max-width: 320px){
     h4{font-size: 16px;}
-
     h5{font-size: 11px;}
 
     p{font-size: 14px;}
 }
 
 @media screen and (min-width: 1200px){
+    .h1{font-size: 23px;}
+    .h2{font-size: 22px;}
     .h3{font-size: 19px;}
     .h4{font-size: 18px;}
     .h5{font-size: 13px;}
-    h6 ,.h6{
-        font-size: 12px;
-        margin: 0 !important;
-    }
+    .h6{font-size: 12px;}
     .p{font-size: 16px;}
 
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,

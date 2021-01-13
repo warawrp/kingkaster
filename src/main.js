@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import VuePageTransition from 'vue-page-transition'
  
 Vue.use(VuePageTransition)
-
 Vue.config.productionTip = false;
 
 new Vue({
