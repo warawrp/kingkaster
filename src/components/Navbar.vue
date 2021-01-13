@@ -14,20 +14,20 @@
                     <div class="row d-flex justify-content-end">
                         <div style="width:401px;">
                             <img class="iconSearch" src="../assets/icon/search.png">
-                            <input type="text" class="inputSearch" placeholder="ค้นหาข้อความ">
+                            <input type="text" class="inputSearch p" placeholder="ค้นหาข้อความ">
                             <button class="btn-search p " type="button">ค้นหา</button>
                         </div>
                         <div style="width:70px;">
                             <img class="iconCart" src="../assets/icon/cart.png">
-                            <button class="numberNoti">100</button>
+                            <button class="numberNoti h6">100</button>
                         </div>
                         <div style="width:60px;">
                             <img class="iconNoti" src="../assets/icon/notification.png">
-                            <button class="numberNoti2">10</button>
+                            <button class="numberNoti2 h6">10</button>
                         </div>
                         <div style="width:140px;" data-toggle="modal" data-target="#login">
                             <img class="iconNoti" src="../assets/icon/notification.png">
-                            <button class="login">Login</button>
+                            <button class="login h6">Login</button>
                         </div>
                     </div>
                 </div>
@@ -242,6 +242,10 @@ Vue.use(vuescroll)
 <style scoped>
  
  @media screen and (min-width: 1200px){
+    .h4{font-size: 18px;}
+    .h5{font-size: 13px;}
+    .h6{font-size: 12px;}
+    .p{font-size: 16px;}
      
      #navbar{
         position: fixed;
@@ -315,7 +319,6 @@ Vue.use(vuescroll)
 
     .numberNoti{
         font-family: 'kanitregular';
-        font-size: 12px;
         color: #fff;
         background-color:#d50915;
         border-radius: 25px;
@@ -336,7 +339,6 @@ Vue.use(vuescroll)
     }
     .numberNoti2{
         font-family: 'kanitregular';
-        font-size: 12px;
         color: #fff;
         background-color:#d50915;
         border-radius: 25px;
@@ -349,11 +351,8 @@ Vue.use(vuescroll)
         left: 40px;
     }
 
-
-
     .login{
         font-family: 'kanitregular';
-        font-size: 12px;
         color: #fff;
         background-color:#399cff;
         border-radius: 7px 7px 7px 0;

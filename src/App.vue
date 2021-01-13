@@ -14,10 +14,4 @@
   @import './css/style.css';
   @import './css/vueBirthDatepicker.css';
   
-
-  html, body{
-    height: calc(100% - 50px);
-  }
-
-  
 </style>
