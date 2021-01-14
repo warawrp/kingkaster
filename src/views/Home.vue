@@ -4,7 +4,19 @@
       <!-- <ImageSlideHeader /> -->
       <Sidebar />
       <FooterHeader/>
-      <Recommended />
+      <Recommend />
+
+      <div class="row">
+            <div class="col-lg-12 bg-Home">
+              <Interest/>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-lg-12 bg-Home">
+              <LiveVideo/>
+            </div>
+      </div>
+      
       
   </div>
 </template>
@@ -14,7 +26,9 @@ import Navbar from "@/components/Navbar.vue";
 // import ImageSlideHeader from "@/components/ImageSlideHeader.vue";
 import Sidebar from "@/components/Sidebar.vue"
 import FooterHeader from "@/components/FooterHeader.vue"
-import Recommended from "@/components/Recommended.vue"
+import Recommend from "@/components/Recommend.vue"
+import Interest from "@/components/Interest.vue"
+import LiveVideo from "@/components/LiveVideo.vue"
 
 export default {
   name: "Home",
@@ -23,9 +37,10 @@ export default {
     // ImageSlideHeader,
     Sidebar,
     FooterHeader,
-    Recommended
+    Recommend,
+    Interest,
+    LiveVideo
   }
 };
 </script>
 
-<style lang="css"></style>

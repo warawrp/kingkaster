@@ -55,6 +55,180 @@
     .modal-open{
         overflow: auto;
     }
-    
+    .rc-fontHeader{
+        font-family: 'kanitmedium';
+        color: #fff;
+        margin: 26px 5px 20px 65px;
+    }
+    .bg-Home{
+        background-color: #141622;
+    }
+    .prev{
+        background-color: #000000;
+        opacity: 0.5;
+        padding: 7px 10px;
+        border-radius: 50px;
+        position: absolute;
+        top: 25px;
+        right: 100px;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .prev:hover{
+        background-color: #4e7bf7;
+        opacity: 1;
+    }
 
+    .next{
+        background-color: #000000;
+        opacity: 0.5;
+        padding: 7px 10px;
+        border-radius: 50px;
+        position: absolute;
+        top: 25px;
+        right: 65px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .next:hover{
+        background-color: #4e7bf7;
+        opacity: 1;
+    }
+
+    .lv-prev{
+        background-color: #000000;
+        opacity: 0.5;
+        padding: 7px 10px;
+        border-radius: 50px;
+        position: absolute;
+        top: -35px;
+        right: 50px;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .lv-prev:hover{
+        background-color: #4e7bf7;
+        opacity: 1;
+    }
+
+    .lv-next{
+        background-color: #000000;
+        opacity: 0.5;
+        padding: 7px 10px;
+        border-radius: 50px;
+        position: absolute;
+        top: -35px;
+        right: 15px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .lv-next:hover{
+        background-color: #4e7bf7;
+        opacity: 1;
+    }
+
+    .it-fontMore{
+        font-family: 'kanitlight';
+        color: #399cff;
+        cursor: pointer;
+    }
+
+    .lv-bg{
+        width: 100%;
+        height: 410px;
+        background-color: #24284b;
+        border-radius: 15px;
+        color: #fff;
+        margin-top: 15px;
+    }
+
+    .lv-video{
+        width: 100%;
+        height: 272px;
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .lv-bth{
+        border-radius: 9px;
+        background-color: #0c0d14a1;
+        font-family: 'kanitregular';
+        color:#fff;
+        padding: 10px 22px 10px 42px;
+        border-radius: 7px;
+        position: absolute;
+        top: 230px;
+        left: 15px;
+        z-index: 1;
+    }
+
+    .lv-btnImg{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        position: absolute;
+        top:5px;
+        left:8px;
+        z-index: 2;
+    }
+    .lv-imgProfile{
+        width: 76px;
+        height: 76px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: solid 3px #ffffff;
+        position: absolute;
+        bottom: 40px;
+        left: 25px;
+        z-index: 1;
+    }
+
+    .lv-imgProfile.active{
+        border: solid 3px #e30000;
+    }
+
+    .lv-btnLive{
+        font-family: 'kanitmedium';
+        color: #fff;
+        padding: 0 8px 3px 8px;
+        border-radius: 3px;
+        background-color:  #e30000;
+        position: absolute;
+        bottom: 25px;
+        left: 37px;
+        z-index: 1;
+    }
+
+    .lv-videoName{
+        margin:35px 0 0 120px;
+        width: 65%;
+        height: 30px;
+        font-family: 'kanitmedium';
+        color: #fff;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .lv-casterName{
+        margin: 0 0 0 120px;
+        width: 65%;
+        height: 30px;
+        font-family: 'kanitlight';
+        color: #fff;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    text-decoration: none !important;
 }

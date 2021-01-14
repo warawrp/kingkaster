@@ -7,7 +7,7 @@
             </button>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="sb-iconButton my-2">
+                    <div class="sb-iconButton">
                         <img src="../assets/icon/follow.png">
                     </div>
                     <label class="sb-fontHeader h4">ช่องที่ติดตาม</label>
@@ -42,7 +42,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="sb-iconButton my-2">
+                    <div class="sb-iconButton">
                         <img src="../assets/icon/video.png">
                     </div>
                     <label class="sb-fontHeader h4">ช่องที่แนะนำ</label>
@@ -135,7 +135,7 @@
                         id: '2',
                         image:'https://cdn.pixabay.com/photo/2020/07/30/10/29/woman-5450043__340.jpg',
                         name: 'BabyIce Zazunggggggggggg',
-                        video: '112',
+                        video: '2',
                         status: '1',
                         timeOnline: '8 นาทีออนไลน์',
                         live:'1'
@@ -144,7 +144,7 @@
                         id: '3',
                         image:'https://cdn.pixabay.com/photo/2019/10/28/21/21/halloween-4585684__340.jpg',
                         name: 'BabyIce Zazunggggggggggg',
-                        video: '1199',
+                        video: '1',
                         status: '0',
                         timeOnline: 'ออฟไลน์',
                         live:'0'
@@ -180,7 +180,7 @@
     position: fixed; 
     z-index: 10;
     top: 75px;
-    right: -200px;
+    right: -205px;
     transition: all .3s ease-in-out;
     }
 
@@ -199,9 +199,9 @@
     }
 
     .sb-img img{
-        width: 40px;
-        height: 39px;
-        margin: 5px 0 5px 15px;
+        width: 35px;
+        height: 35px;
+        margin: 7px 0 0 15px;
         border-radius: 10px;
         border: solid 2px #ffffff;
         object-fit: cover;
@@ -222,12 +222,11 @@
     }
 
     .sb-iconButton{
-        /* position: absolute;
-        top: 10px;
-        right: 15px; */
-        width:46px;
-        height: 47px;
-        margin-left: 10px;
+        margin: 10px 0 0 15px;
+    }
+
+    .sb-iconButton > img{
+        width: 35px;
     }
 
     .sb-cutName{
@@ -238,8 +237,8 @@
         color: #399cff;
         font-family: 'kanitmedium';
         position: absolute;
-        top: 5px;
-        left: 70px;
+        top: 8px;
+        left: 65px;
     }
     .sb-ststusOnline{
         background-color: #d82a2a;
@@ -247,7 +246,7 @@
         height: 9px;
         border-radius: 50%;
         position: absolute;
-        top: 5px;
+        top: 15px;
         right: 15px;
     }
 
@@ -260,7 +259,7 @@
         font-family: 'kanitlight';
         position: absolute;
         top: 27px;
-        left: 70px;
+        left: 65px;
     }
     
     .sb-timeOnline{
@@ -277,8 +276,8 @@
         font-size: 10px;
         color: #fff;
         position: absolute;
-        top: 35px;
-        left: 21px;
+        top: 30px;
+        left: 18px;
         background-color: #d82a2a;
         padding: 0 5px;
         border-radius: 4px;
@@ -294,6 +293,43 @@
         -o-transform: rotate(-180deg);
         -ms-transform: rotate(-180deg);
         transform: rotate(-180deg);
+    }
+}
+
+@media screen and (min-width: 1300px){
+
+    .sb-img img{
+        width: 40px;
+        height: 40px;
+        margin: 6px 0 3px 12px;
+        border-radius: 10px;
+        border: solid 2px #ffffff;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .sb-img.active > img{
+        border: solid 2px #ff0715;
+    }
+
+    .sb-ststusLive{
+        font-family: 'kanitmedium';
+        font-size: 10px;
+        color: #fff;
+        position: absolute;
+        top: 35px;
+        left: 18px;
+        background-color: #d82a2a;
+        padding: 0 5px;
+        border-radius: 4px;
+    }
+
+    .sb-iconButton{
+        margin: 10px 0 0 12px;
+    }
+
+    .sb-iconButton > img{
+        width: 40px;
     }
 }
 

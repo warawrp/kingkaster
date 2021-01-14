@@ -1,12 +1,18 @@
 <template>
-    <div id="Recommended">
+    <div id="Recommend">
         <div class="row">
             <div class="col-lg-12 bg-rc">
                 <div class="row" style="width:100%; padding-left:15px;">
                     <div class="col-lg-12">
                         <label class="rc-fontHeader h2">ช่องที่แนะนำ</label>
-                        <div style="padding: 0 60px 0 60px">
-                            <carousel :autoplay="false" :loop="true" :nav="false" :items='4' :dots="false" @changed="changed" @updated="updated">
+                        <div style="padding: 0 50px 0 60px">
+                            <carousel 
+                                :autoplay="false" 
+                                :loop="false" 
+                                :nav="false"
+                                :dots="false"
+                                :responsive="{0:{items:1,nav:false},600:{items:3,nav:false},1200:{items:4,nav:false},1900:{items:5,nav:false}}"
+                                @changed="changed" @updated="updated">
                                 <div style="padding:0 30px 0 10px">
                                     <div class="row" style="padding-left:7px">
                                         <div class="col-lg-12 mb-2">
@@ -16,13 +22,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6" v-for="game in games" :key="game.id">
-                                            <div style="padding: 4px 1.5px 2px 0">
-                                                <img class="rc-img" :src="game.image">
-                                                <div class="rc-coverImg"></div>
-                                                <div class="rc-name h5">{{game.name}}</div>
-                                                <label class="rc-ststusOnline" v-if="game.status != 1"></label>
-                                                <label class="rc-ststusOnline active" v-else></label>
-                                            </div>
+                                            <a href="#">
+                                                <div style="padding: 4px 1.5px 2px 0">
+                                                    <img class="rc-img" :src="game.image">
+                                                    <div class="rc-coverImg"></div>
+                                                    <div class="rc-name h5">{{game.name}}</div>
+                                                    <label class="rc-ststusOnline" v-if="game.status != 1"></label>
+                                                    <label class="rc-ststusOnline active" v-else></label>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -36,13 +44,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6" v-for="music in musics" :key="music.id">
-                                            <div style="padding: 4px 1.5px 2px 0">
-                                                <img class="rc-img" :src="music.image">
-                                                <div class="rc-coverImg"></div>
-                                                <div class="rc-name h5">{{music.name}}</div>
-                                                <label class="rc-ststusOnline" v-if="music.status != 1"></label>
-                                                <label class="rc-ststusOnline active" v-else></label>
-                                            </div>
+                                            <a href="#">
+                                                <div style="padding: 4px 1.5px 2px 0">
+                                                    <img class="rc-img" :src="music.image">
+                                                    <div class="rc-coverImg"></div>
+                                                    <div class="rc-name h5">{{music.name}}</div>
+                                                    <label class="rc-ststusOnline" v-if="music.status != 1"></label>
+                                                    <label class="rc-ststusOnline active" v-else></label>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -55,13 +65,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6" v-for="comedy in comedys" :key="comedy.id">
-                                            <div style="padding: 4px 1.5px 2px 0">
-                                                <img class="rc-img" :src="comedy.image">
-                                                <div class="rc-coverImg"></div>
-                                                <div class="rc-name h5">{{comedy.name}}</div>
-                                                <label class="rc-ststusOnline" v-if="comedy.status != 1"></label>
-                                                <label class="rc-ststusOnline active" v-else></label>
-                                            </div>
+                                            <a href="#">
+                                                <div style="padding: 4px 1.5px 2px 0">
+                                                    <img class="rc-img" :src="comedy.image">
+                                                    <div class="rc-coverImg"></div>
+                                                    <div class="rc-name h5">{{comedy.name}}</div>
+                                                    <label class="rc-ststusOnline" v-if="comedy.status != 1"></label>
+                                                    <label class="rc-ststusOnline active" v-else></label>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -75,13 +87,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6" v-for="food in foods" :key="food.id">
-                                            <div style="padding: 4px 1.5px 2px 0">
-                                                <img class="rc-img" :src="food.image">
-                                                <div class="rc-coverImg"></div>
-                                                <div class="rc-name h5">{{food.name}}</div>
-                                                <label class="rc-ststusOnline" v-if="food.status != 1"></label>
-                                                <label class="rc-ststusOnline active" v-else></label>
-                                            </div>
+                                            <a href="#">
+                                                <div style="padding: 4px 1.5px 2px 0">
+                                                    <img class="rc-img" :src="food.image">
+                                                    <div class="rc-coverImg"></div>
+                                                    <div class="rc-name h5">{{food.name}}</div>
+                                                    <label class="rc-ststusOnline" v-if="food.status != 1"></label>
+                                                    <label class="rc-ststusOnline active" v-else></label>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +114,7 @@
 <script>
     import carousel from 'vue-owl-carousel'
     export default {
-        name: 'Recommended',
+        name: 'Recommend',
         components: { carousel },
         data(){
             return{
@@ -214,6 +228,7 @@
 </script>
 
 <style lang="css" scoped>
+@media screen and (min-width: 1200px){
     .h1{font-size: 23px;}
     .h2{font-size: 22px;}
     .h5{font-size: 13px;}
@@ -222,30 +237,6 @@
         width: 100%;
         height: 416px;
         background-color: #24284b;
-    }
-    .rc-fontHeader{
-        font-family: 'kanitmedium';
-        color: #fff;
-        margin: 26px 5px 20px 65px;
-    }
-    .prev{
-        background-color: #4e7bf7;
-        padding: 7px 10px;
-        border-radius: 50px;
-        position: absolute;
-        top: 25px;
-        right: 95px;
-        z-index: 1;
-    }
-
-    .next{
-        background-color: #4e7bf7;
-        padding: 7px 10px;
-        border-radius: 50px;
-        position: absolute;
-        top: 25px;
-        right: 60px;
-        z-index: 1;
     }
 
     .rc-img{
@@ -271,7 +262,7 @@
     .rc-name{
         position: absolute;
         left: 13px;
-        bottom: 2px;
+        bottom: 0;
         z-index: 2;
         text-overflow: ellipsis;
         overflow: hidden; 
@@ -289,7 +280,7 @@
         border-radius: 50%;
         position: absolute;
         right: 10px;
-        bottom: 5px;
+        bottom: 1px;
         z-index: 2;
     }
 
@@ -306,6 +297,5 @@
         left: 15px;
         z-index: 1;
     }
-
-
+}
 </style>
