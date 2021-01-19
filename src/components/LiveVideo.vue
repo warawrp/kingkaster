@@ -27,8 +27,17 @@
                                     <div class="lv-casterName h3">TheSquash</div>
                                 </a>
                             </div>
-                            <div class="col-lg-7">
-                                
+                            <div class="col-lg-7" style="color:#fff; padding: 0 200px 0 80px;">
+                                <VueSlickCarousel :arrows="true" :dots="true" :rows='2'>
+                                    <div>1</div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                                    <div>5</div>
+                                    <div>6</div>
+                                    <div>7</div>
+                                    <div>8</div>
+                                </VueSlickCarousel>
                             </div>
                         </div>
                     </div>
@@ -40,9 +49,14 @@
 
 <script>
     // import carousel from 'vue-owl-carousel'
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    // optional style for arrows & dots
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     export default {
         name:'LiveVideo',
         // components: { carousel },
+        components: { VueSlickCarousel },
         data(){
             return{
             }
